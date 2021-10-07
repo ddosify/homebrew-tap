@@ -5,33 +5,33 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "0.3.0"
+  version "0.3.1"
   license "AGPL-3.0-only"
   bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.3.0/ddosify_0.3.0_macos_amd64.tar.gz"
-      sha256 "6507255efbaa775ca158010fa727641d69e9dfd4c601f395d1d60deb5ccb9797"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.3.0/ddosify_0.3.0_macos_arm64.tar.gz"
-      sha256 "dd531437e40e9a0c494e28013112aa58b62f5864c5c54750f39bceb6e618d717"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.3.1/ddosify_0.3.1_macos_arm64.tar.gz"
+      sha256 "6912690ea79941198fbf49cfe1860ec89121781544b95f418ee67a8188e8738d"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.3.1/ddosify_0.3.1_macos_amd64.tar.gz"
+      sha256 "6b3228721878ce98e3e5266c7832b3ba85333e35d206393c22d6a6a48d08bb14"
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.3.1/ddosify_0.3.1_linux_arm64.tar.gz"
+      sha256 "38956c248ea25b529b18dcb7d9da4b0d73b6b10391c9618eb9dc800a417a0307"
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.3.0/ddosify_0.3.0_linux_amd64.tar.gz"
-      sha256 "83df6f9bb9d500d9975ef3951c0d20ee7bcefe9db3117a0ff8f53a514ec94290"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.3.1/ddosify_0.3.1_linux_amd64.tar.gz"
+      sha256 "ce6d57a263971cecf3e087ffe02b9f66dc3bd436cb4f61e142f2e4108e97a37a"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.3.0/ddosify_0.3.0_linux_armv6.tar.gz"
-      sha256 "4899f8d50238b5788e1e83c3ed6eb7468b35fade2538c640192f9203744929e9"
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.3.0/ddosify_0.3.0_linux_arm64.tar.gz"
-      sha256 "3257a03bf3d39f4dacef27f362776dda6e8842caa1563fcbc26e9ec1b05a4da0"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.3.1/ddosify_0.3.1_linux_armv6.tar.gz"
+      sha256 "0b08195bb6b24400758612c26931ba5d93034b20985dceaf1244b965252bed91"
     end
   end
 
