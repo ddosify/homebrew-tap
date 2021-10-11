@@ -5,33 +5,33 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "0.4.0"
+  version "0.4.1"
   license "AGPL-3.0-only"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.4.0/ddosify_0.4.0_macos_amd64.tar.gz"
-      sha256 "d795602fa2592e77020ba799651ada29b7cebbf218b5ff7d598a2ac673c06ec7"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.4.1/ddosify_0.4.1_macos_amd64.tar.gz"
+      sha256 "321fa37cc96f9e0ce9a5533565f187ba394c03974ecdb600f06545770b04802b"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.4.0/ddosify_0.4.0_macos_arm64.tar.gz"
-      sha256 "3229e9e72189c87f59b6148b1db6ae07baf1a90e9990133d911a0f512440200b"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.4.1/ddosify_0.4.1_macos_arm64.tar.gz"
+      sha256 "22fc14f31d78a8ab24679526a883e8847428226c959e29325291e4bed3b277b5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.4.0/ddosify_0.4.0_linux_amd64.tar.gz"
-      sha256 "22b7a189e7957feb27af6623992069cb50c3f1505cb4a21e00255332d3002ff3"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.4.1/ddosify_0.4.1_linux_amd64.tar.gz"
+      sha256 "592c951081c8738cde9951f8e99d1985d8d4493838f698230398374e4f8de292"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.4.0/ddosify_0.4.0_linux_armv6.tar.gz"
-      sha256 "43eb78335ac8beeeab91458d8ed98ab6f3665975c58aa2c2871e569a256e7f51"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.4.1/ddosify_0.4.1_linux_armv6.tar.gz"
+      sha256 "1f4eeecf9af10902f5da9b072d1de47fdef1c1bf3c4d7b5b78e76820be35d2a3"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.4.0/ddosify_0.4.0_linux_arm64.tar.gz"
-      sha256 "3b717e9d73a651d46dd59515dbe81608fbcf4f222899f6be856ed9b8314a4e66"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.4.1/ddosify_0.4.1_linux_arm64.tar.gz"
+      sha256 "949fdb030e32b297ae721ad05f42bb6eda338ed6f1c13044c76ac60373e09f28"
     end
   end
 
