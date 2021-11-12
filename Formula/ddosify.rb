@@ -5,12 +5,12 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "0.5.1"
+  version "0.5.2"
   license "AGPL-3.0-only"
 
   on_macos do
-    url "https://github.com/ddosify/ddosify/releases/download/v0.5.1/ddosify_0.5.1_macos_all.tar.gz"
-    sha256 "6881b01c0ae9e7ad41ae748d957880352de075b911dd6b0aa52f41b36f99c82b"
+    url "https://github.com/ddosify/ddosify/releases/download/v0.5.2/ddosify_0.5.2_macos_all.tar.gz"
+    sha256 "72a4c3a4cf8403c92422d8003882a15e5f8118fc7b1612ba2a3188dc58cf9b27"
 
     def install
       bin.install "ddosify"
@@ -19,24 +19,24 @@ class Ddosify < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.5.1/ddosify_0.5.1_linux_arm64.tar.gz"
-      sha256 "b9b927e010990c71573dc318b2c4b5de6d3cc40e59bd6ff2efadb4c4472daf0c"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.5.2/ddosify_0.5.2_linux_arm64.tar.gz"
+      sha256 "787177ca6b8f0261855599d572b7fdc37a858079d2455c33ad1eacfc89c040eb"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.5.1/ddosify_0.5.1_linux_amd64.tar.gz"
-      sha256 "b71cb7f8f07f215037bb0d283646c16ab8410110c51a0fbabdbd21ab170f968b"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.5.2/ddosify_0.5.2_linux_amd64.tar.gz"
+      sha256 "f0440963b369d99bba8941d597fe27cfda9260c4d365dce1c5ada7520112a57b"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.5.1/ddosify_0.5.1_linux_armv6.tar.gz"
-      sha256 "fcc11e1b74fe0004a2f514a33b8bcf394737df56efc78667f60e425392d9faeb"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.5.2/ddosify_0.5.2_linux_armv6.tar.gz"
+      sha256 "2431b75656e0fb3c4403d6a08227739d634e6a4955ff1206e3770496f42f69ef"
 
       def install
         bin.install "ddosify"
