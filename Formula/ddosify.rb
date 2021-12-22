@@ -9,8 +9,8 @@ class Ddosify < Formula
   license "AGPL-3.0-only"
 
   on_macos do
-    url "https://github.com/ddosify/ddosify/releases/download/0.7.0/ddosify_0.7.0_macos_all.tar.gz"
-    sha256 "261e4f00c5baa4d36706d4f99409b91494f7383a5fb68f6e535efb0671c24553"
+    url "https://github.com/ddosify/ddosify/releases/download/v0.7.0/ddosify_0.7.0_macos_all.tar.gz"
+    sha256 "8be09aae35f519fa92771f1f5b3485f2f088e7a27a6159c2af0cf07a1d0494fd"
 
     def install
       bin.install "ddosify"
@@ -19,24 +19,24 @@ class Ddosify < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/0.7.0/ddosify_0.7.0_linux_arm64.tar.gz"
-      sha256 "d6bc208734435b7f8da7df74234acfd29371e1c7c4f3eea189d59127f6d7f748"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.7.0/ddosify_0.7.0_linux_arm64.tar.gz"
+      sha256 "1ff09233299966bc084e90e63ff02cb03b711569e622cab6bd641a372a9888e6"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/0.7.0/ddosify_0.7.0_linux_armv6.tar.gz"
-      sha256 "1877c2d61f0a030534087ba626ad7ea830ba8d31f0490d88fd9ebb47099131ca"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.7.0/ddosify_0.7.0_linux_armv6.tar.gz"
+      sha256 "5ce1c6d81d37e1fa6fabf2e0cc3f302617bfb0cec37643518fc508db8b831c2e"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/0.7.0/ddosify_0.7.0_linux_amd64.tar.gz"
-      sha256 "46fee6f4d29304aa51fd62d09cf84c027aae4c3fd0ca6f41f8c8d7669eab7415"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.7.0/ddosify_0.7.0_linux_amd64.tar.gz"
+      sha256 "ffed43f817b971c072795c7745ebb52aa1af977a8ea9272cad4ec8e06c8dbed0"
 
       def install
         bin.install "ddosify"
