@@ -5,14 +5,14 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "0.8.2"
+  version "0.8.3"
   license "AGPL-3.0-only"
 
   depends_on "go" => :optional
 
   on_macos do
-    url "https://github.com/ddosify/ddosify/releases/download/v0.8.2/ddosify_0.8.2_macos_all.tar.gz"
-    sha256 "fdae64d2c4772c325aadcc988728bcb396de5de8d9af8a82c99bc03611bb6783"
+    url "https://github.com/ddosify/ddosify/releases/download/v0.8.3/ddosify_0.8.3_macos_all.tar.gz"
+    sha256 "9c77940542d25d301883fc74ce6d73bfb64a403811b3a77501c66d99d9ad3b1a"
 
     def install
       bin.install "ddosify"
@@ -20,25 +20,25 @@ class Ddosify < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.8.3/ddosify_0.8.3_linux_armv6.tar.gz"
+      sha256 "6557fff1aa46d895f5d3431a3fb52a464c1facc95055f58ec1ac167a4e7e6b59"
+
+      def install
+        bin.install "ddosify"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.8.2/ddosify_0.8.2_linux_amd64.tar.gz"
-      sha256 "9ab95823189745bc61a81a58ccaa47d37daf93ed07f804f8fb725423d50daa8c"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.8.3/ddosify_0.8.3_linux_amd64.tar.gz"
+      sha256 "de0c4025d5d7598fc323895e3997192c319941200263a198d98aed2f4c0a8716"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.8.2/ddosify_0.8.2_linux_arm64.tar.gz"
-      sha256 "df1f8e559efaeeddc468120ed762f018be0c2535ae961770c7193356d4712505"
-
-      def install
-        bin.install "ddosify"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.8.2/ddosify_0.8.2_linux_armv6.tar.gz"
-      sha256 "34ec93cbc0538d50552dce0444b1f9ff3ddb73223aeda91ce38f465c4afd10c4"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.8.3/ddosify_0.8.3_linux_arm64.tar.gz"
+      sha256 "9afd89edb223ffa1216ebb45f8e055e54c87608340ca2537a65cb5150e25b3fd"
 
       def install
         bin.install "ddosify"
