@@ -5,14 +5,14 @@
 class Ddosify < Formula
   desc "High-performance load testing tool, written in Golang."
   homepage "https://ddosify.com"
-  version "0.13.2"
+  version "0.14.0"
   license "AGPL-3.0-only"
 
   depends_on "go" => :optional
 
   on_macos do
-    url "https://github.com/ddosify/ddosify/releases/download/v0.13.2/ddosify_0.13.2_macos_all.tar.gz"
-    sha256 "719b65d1c7fd463257e9705072d9e09b8855dbf256051ddfda2391d8fb6672ed"
+    url "https://github.com/ddosify/ddosify/releases/download/v0.14.0/ddosify_0.14.0_macos_all.tar.gz"
+    sha256 "69c6ba3e7a5f10a3886aacc3ef98196e7236ff9b5f4d15f678e5458d40d8e352"
 
     def install
       bin.install "ddosify"
@@ -20,25 +20,25 @@ class Ddosify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.13.2/ddosify_0.13.2_linux_armv6.tar.gz"
-      sha256 "3c40b5300c1eeabe2a3f17ee0ff377c62d0db5b1443746e347ca76feacf3ef6d"
-
-      def install
-        bin.install "ddosify"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.13.2/ddosify_0.13.2_linux_amd64.tar.gz"
-      sha256 "587eaaba5b00d258310ed4a45003f8960e73dba5c40a51c70915de991cacd606"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.14.0/ddosify_0.14.0_linux_amd64.tar.gz"
+      sha256 "440eedc7117f6a02ed8f60b2078d310be51879bbb4800d19f4f201778add999a"
 
       def install
         bin.install "ddosify"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.13.2/ddosify_0.13.2_linux_arm64.tar.gz"
-      sha256 "3af7c054fa5fe3d244367ab374dd09534976a6c31bf3c99f27bc4ecdba77a71f"
+      url "https://github.com/ddosify/ddosify/releases/download/v0.14.0/ddosify_0.14.0_linux_arm64.tar.gz"
+      sha256 "5d307bc50bebec69c24f24080b4392972ffaea8471ef508fdc10892bb47fe486"
+
+      def install
+        bin.install "ddosify"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.14.0/ddosify_0.14.0_linux_armv6.tar.gz"
+      sha256 "b8bacd2bc6d4c9975a42b034e0f8a5ab3fce20a71d5c64d2e3ab1e4583d69833"
 
       def install
         bin.install "ddosify"
