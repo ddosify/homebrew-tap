@@ -12,7 +12,7 @@ class Ddosify < Formula
 
   on_macos do
     url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_macos_all.tar.gz"
-    sha256 "09687705846bd7e0d4348e6d6d0580869865137266e7f8382b9195e3488cfca5"
+    sha256 "2e5eacc886335809bdda9c4ebe6993d3d9550e2bf598838fa3dfcf3b0070925b"
 
     def install
       bin.install "ddosify"
@@ -20,9 +20,9 @@ class Ddosify < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_linux_armv6.tar.gz"
-      sha256 "8518c7efb30b82824381dba27215950df5865a3f9491bebe62b8a4415e1a6f3c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_linux_arm64.tar.gz"
+      sha256 "98d4b9885c979299b19d892540652aab930c71dc0b9b1f8b3843cf433f8a6b3e"
 
       def install
         bin.install "ddosify"
@@ -30,15 +30,15 @@ class Ddosify < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_linux_amd64.tar.gz"
-      sha256 "01ab65ddf2111a9144c4cd2862f503c3418d3a3c35d7c2f6461a77471454e0f3"
+      sha256 "f4de4e86f3c83c139dd0749f566012d6de916014558a8e5698ebd5dfe0b90e5c"
 
       def install
         bin.install "ddosify"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_linux_arm64.tar.gz"
-      sha256 "6b8f8cbe3d47c8f322f6384b8673224fdc39df4e65035d11079dcf896ed203b5"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ddosify/ddosify/releases/download/v0.16.2/ddosify_0.16.2_linux_armv6.tar.gz"
+      sha256 "d2921f38df33934fcfa1d14d15383500c77fe7ec6c3b22565297593d70974cfb"
 
       def install
         bin.install "ddosify"
